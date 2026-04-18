@@ -34,7 +34,7 @@ The deployment followed a structured approach:
 ## 📊 Proof of Concept / Testing
 
 ### 1. Domain Controller Promotion
-![AD DS Configuration](obraz1.png)
+![AD DS Configuration](forest.png)
 **Action:** Initializing the Active Directory Domain Services configuration wizard. I selected the "Add a new forest" option and set the root domain name to `kolkol.local` to establish the core identity provider for the network.
 
 ### 2. DHCP Scope & Network Services
