@@ -35,16 +35,20 @@ The deployment followed a structured approach:
 
 ### 1. Domain Controller Promotion
 ![AD DS Configuration](forest.png)
+
 **Action:** Initializing the Active Directory Domain Services configuration wizard. I selected the "Add a new forest" option and set the root domain name to `kolkol.local` to establish the core identity provider for the network.
 
 ### 2. DHCP Scope & Network Services
 ![DHCP Range Configuration](dhcp.png)
+
 **Action:** Configuring the IP address range for the network scope. I defined a range from `10.1.1.1` to `10.1.1.254` with a `/24` subnet mask to ensure all client devices receive an IP address automatically.
 
 ![DNS Server Assignment](dns_scope.png)
+
 **Action:** Assigning the DNS server IP (`10.1.1.128`) within the DHCP Scope Wizard. This step ensures that every client receiving an IP address also knows where to send DNS queries for domain resolution.
 
 ![DNS Verification](nslookup.png)
+
 **Action:** Testing name resolution using `nslookup`. I verified that both the FQDN (`dc1.kolkol.local`) and the alias (`dc.kolkol.local`) correctly point to the server's static IP address, confirming the DNS service is healthy.
 
 ### 3. User & OU Organization
@@ -53,6 +57,7 @@ The deployment followed a structured approach:
 
 ### 4. Group Policy Application
 ![GPO Verification](policies.png)
+
 **Action:** Running `gpresult /r` from an administrative command prompt. The output confirms that the "Zdefiniowanie jednolitego tla pulpitu" (Unified Desktop Background) policy is successfully applied to the current session.
 
 ![Desktop Result](background.png)
@@ -60,6 +65,7 @@ The deployment followed a structured approach:
 
 ### 5. Web Server Functionality
 ![IIS Test Page](IIS.png)
+
 **Action:** Testing the IIS Web Server role by accessing `www.kolkol.local` in a browser. The successful loading of the test page confirms that the web server is running and the DNS record for the "www" prefix is working correctly.
 
 ## 💡 What I Learned
